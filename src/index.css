@@ -1,8 +1,9 @@
 /* Globale CSS-Variables and Styles */
 :root {
-  --primary-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-font: 'Space Mono', monospace;
   --line-height: 1.5;
-  --font-weight: 400;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
   --accent-color: hsl(212, 100%, 50%);
   --button-text-color: hsl(0, 0%, 100%);
   --bg-primary: hsl(220, 40%, 13%);
@@ -37,9 +38,45 @@
 html {
   font-family: var(--primary-font);
   font-size: 16px;
-  font-weight: var(--font-weight);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height);
   color-scheme: light dark;
   color: var(--text-color);
   background-color: var(--bg-primary);
+}
+
+/* Typography Styles */
+body {
+  font-size: 0.9375rem;
+  line-height: 1.5625;
+}
+
+h1,
+h2 {
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: 1.625rem;
+  line-height: 2,375rem;
+}
+
+h2 {
+  font-size: 1.375rem;
+  line-height: 2,0625rem;
+}
+
+h3,
+h4 {
+  font-weight: var(--font-weight-regular);
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1,5rem;
+}
+
+h4 {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 }
