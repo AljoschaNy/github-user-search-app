@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.375rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color-full);
+}
+
+/* Button Styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    opacity: .6;
+}
+
+.toggle-text {
+    margin-right: 1rem;
+}
+
+.light-mode {
+    display: none;
+}
+
+@media (prefers-color-scheme: light) {
+    .dark-mode {
+        display: none;
+    }
+
+    .light-mode {
+        display: block;
+    }
+  }

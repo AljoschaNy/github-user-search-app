@@ -1,6 +1,14 @@
+#root,
+.container {
+  margin: 0 auto;
+}
+
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem;
+}
+
+.container {
+  max-width: 730px;
+  margin-top: 144px;
 }
