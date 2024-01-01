@@ -29,6 +29,7 @@
   --text-color: hsl(217, 35%, 45%);
   --text-color-full: hsl(217, 21%, 21%);
   --text-color-aside: hsl(217, 35%, 20%);
+  --drop-shadow: hsla(227, 46%, 51%, 20%)
 }
 
 /* General Styles */
