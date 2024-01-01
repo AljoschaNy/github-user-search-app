@@ -1,16 +1,11 @@
 /* Globale CSS-Variables and Styles */
 :root {
-  --primary-font: 'Space Mono', monospace;
+  --primary-font: "Space Mono", monospace;
   --line-height: 1.5;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --accent-color: hsl(212, 100%, 50%);
   --button-text-color: hsl(0, 0%, 100%);
-  --bg-primary: hsl(220, 40%, 13%);
-  --bg-secondary: hsl(222, 41%, 20%);
-  --text-color: hsl(0, 0%, 75%);
-  --text-color-full: hsl(0, 0%, 100%);
-  --text-color-aside: hsl(0, 0%, 50%);  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,14 +13,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-primary: hsl(227, 100%, 98%);
-    --bg-secondary: hsl(0, 0%, 100%);
-    --text-color: hsl(217, 35%, 45%);
-    --text-color-full: hsl(217, 21%, 21%);
-    --text-color-aside: hsl(217, 35%, 20%);
-  }
+/* Dark Theme Styles */
+.dark {
+  --bg-primary: hsl(220, 40%, 13%);
+  --bg-secondary: hsl(222, 41%, 20%);
+  --text-color: hsl(0, 0%, 75%);
+  --text-color-full: hsl(0, 0%, 100%);
+  --text-color-aside: hsl(0, 0%, 50%);
+}
+
+/* Light Theme Styles */
+.light {
+  --bg-primary: hsl(227, 100%, 98%);
+  --bg-secondary: hsl(0, 0%, 100%);
+  --text-color: hsl(217, 35%, 45%);
+  --text-color-full: hsl(217, 21%, 21%);
+  --text-color-aside: hsl(217, 35%, 20%);
 }
 
 /* General Styles */

@@ -1,0 +1,19 @@
+/* Button Styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    color: var(--text-color-full);
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    opacity: .6;
+}
+
+.toggle-text {
+    margin-right: 1rem;
+}
