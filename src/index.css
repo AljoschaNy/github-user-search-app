@@ -88,5 +88,14 @@ h4 {
 .regular-button {
   background: var(--accent-color);
   color: var(--button-text-color);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
   border: none;
+  border-radius: 10px;
+  padding: 13px 28px;
+}
+
+.regular-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
