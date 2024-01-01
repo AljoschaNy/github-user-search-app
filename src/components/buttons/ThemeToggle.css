@@ -6,6 +6,7 @@
     align-items: center;
     font-size: 0.8125rem;
     text-transform: uppercase;
+    color: var(--text-color-full);
     cursor: pointer;
 }
 
@@ -16,17 +17,3 @@
 .toggle-text {
     margin-right: 1rem;
 }
-
-.light-mode {
-    display: none;
-}
-
-@media (prefers-color-scheme: light) {
-    .dark-mode {
-        display: none;
-    }
-
-    .light-mode {
-        display: flex;
-    }
-  }

@@ -3,16 +3,20 @@ import SunIcon from "../icons/SunIcon";
 import "./ThemeToggle.css";
 
 type ThemeToggleProps = {
-  mode: "dark" | "light";
+  theme: "dark" | "light",
+  onToggleTheme: () => void
 };
 
-function ThemeToggle({ mode }: Readonly<ThemeToggleProps>) {
-    return (
-        <button className={`theme-toggle ${mode === "dark" ? "dark-mode" : "light-mode"}`}>
-            <span className="toggle-text">{mode === "dark" ? "light" : "dark"}</span>
-            {mode === "dark" ? <SunIcon/> : <MoonIcon />}
-        </button>
-    );
+function ThemeToggle({ theme, onToggleTheme }: Readonly<ThemeToggleProps>) {
+  return (
+    <button
+      className={`theme-toggle`}
+      onClick={onToggleTheme}
+    >
+      <span className="toggle-text">{theme === "dark" ? "light" : "dark"}</span>
+      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+    </button>
+  );
 }
 
 export default ThemeToggle;

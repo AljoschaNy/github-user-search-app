@@ -1,12 +1,16 @@
 import "./Header.css";
 import ThemeToggle from "./buttons/ThemeToggle";
 
-function Header() {
+type HeaderProps = {
+  theme: "dark" | "light",
+  onToggleTheme: () => void
+}
+
+function Header({theme, onToggleTheme}:Readonly<HeaderProps>) {
   return (
     <header>
       <p className="logo">devfinder</p>
-      <ThemeToggle mode="dark" />
-      <ThemeToggle mode="light" />
+      <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
     </header>
   );
 }
