@@ -1,12 +1,8 @@
+import { ThemeToggleProps } from "../../type/types";
 import "./Header.css";
-import ThemeToggle from "./buttons/ThemeToggle";
+import ThemeToggle from "../buttons/ThemeToggle";
 
-type HeaderProps = {
-  theme: "dark" | "light",
-  onToggleTheme: () => void
-}
-
-function Header({theme, onToggleTheme}:Readonly<HeaderProps>) {
+function Header({ theme, onToggleTheme }: Readonly<ThemeToggleProps>) {
   return (
     <header>
       <p className="logo">devfinder</p>

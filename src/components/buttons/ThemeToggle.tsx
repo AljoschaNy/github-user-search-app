@@ -1,11 +1,7 @@
+import { ThemeToggleProps } from "../../type/types";
 import MoonIcon from "../icons/MoonIcon";
 import SunIcon from "../icons/SunIcon";
 import "./ThemeToggle.css";
-
-type ThemeToggleProps = {
-  theme: "dark" | "light",
-  onToggleTheme: () => void
-};
 
 function ThemeToggle({ theme, onToggleTheme }: Readonly<ThemeToggleProps>) {
   return (
