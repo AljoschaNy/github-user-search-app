@@ -4,5 +4,6 @@ export type ThemeToggleProps = {
 };
 
 export type RegularButtonProps = {
-  buttonText: string
+  buttonText: string,
+  onClick?: () => void
 }

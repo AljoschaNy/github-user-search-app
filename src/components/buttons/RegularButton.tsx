@@ -1,8 +1,10 @@
 import { RegularButtonProps } from "../../type/types";
 
-function RegularButton({ buttonText }: Readonly<RegularButtonProps>) {
+function RegularButton({ buttonText, onClick }: Readonly<RegularButtonProps>) {
     return (
-        <button className="regular-button">{buttonText}</button>
+        <button className="regular-button" onClick={onClick}>
+            {buttonText}
+        </button>
     );
 }
 
