@@ -5,7 +5,7 @@ import "./Searchbar.css";
 
 function Searchbar() {
   const[searchInput, setSearchInput] = useState("");
-  const[user, setUser] = useState("octodad");
+  const[user, setUser] = useState("octocat");
   const[userData, setUserData] = useState();
   
   const fetchUserData = async ():Promise<void> => {
