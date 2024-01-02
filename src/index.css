@@ -29,6 +29,7 @@
   --text-color: hsl(217, 35%, 45%);
   --text-color-full: hsl(217, 21%, 21%);
   --text-color-aside: hsl(217, 35%, 20%);
+  --drop-shadow: hsla(227, 46%, 51%, 20%)
 }
 
 /* General Styles */
@@ -82,4 +83,20 @@ h3 {
 h4 {
   font-size: 0.8125rem;
   line-height: 1.25rem;
+}
+
+/* Button Styles */
+.regular-button {
+  background: var(--accent-color);
+  color: var(--button-text-color);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  border: none;
+  border-radius: 10px;
+  padding: 13px 28px;
+}
+
+.regular-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
