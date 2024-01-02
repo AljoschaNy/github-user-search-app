@@ -13,3 +13,10 @@ export type UserStatsProps = {
   totalFollowers: number,
   totalFollowing: number
 }
+
+export type MoreInfosProps = {
+  location?: string,
+  twitterLink?: string,
+  websiteLink?: string,
+  companyLink?: string
+}

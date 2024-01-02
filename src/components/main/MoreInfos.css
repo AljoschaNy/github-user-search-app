@@ -1,0 +1,17 @@
+.further-user-infos {
+    list-style: none;
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.further-user-infos li {
+    min-width: 50%;
+    margin-top: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.further-user-infos a {
+    margin-left: 19px;
+}
