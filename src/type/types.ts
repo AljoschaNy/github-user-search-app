@@ -7,3 +7,9 @@ export type RegularButtonProps = {
   buttonText: string,
   onClick?: () => void
 }
+
+export type UserStatsProps = {
+  repoCount: number,
+  totalFollowers: number,
+  totalFollowing: number
+}
