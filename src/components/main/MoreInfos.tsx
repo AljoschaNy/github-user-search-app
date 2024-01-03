@@ -8,21 +8,29 @@ import "./MoreInfos.css";
 function MoreInfos(props:Readonly<MoreInfosProps>) {
   return (
     <ul className="further-user-infos">
-      <li className="user-location">
+      <li className={props.location ? "user-location" : "user-location not-available"}>
         <LocationIcon />
-        <a href="#">{props.location}</a>
+        {props.location 
+        ? <span><a href="#">{props.location}</a></span> 
+        : <span className="not-available">"Not Available"</span>}
       </li>
-      <li className="twitter-link">
+      <li className={props.twitterLink ? "twitter-link" : "twitter-link not-available"}>
         <TwitterIcon />
-        <a href="#">{props.twitterLink}</a>
+        {props.twitterLink 
+        ? <span><a href="#">{props.twitterLink}</a></span> 
+        : <span>Not Available</span>}
       </li>
-      <li className="website-link">
+      <li className={props.websiteLink ? "website-link" : "website-link not-available"}>
         <WebsiteIcon />
-        <a href="#">{props.websiteLink}</a>
+        {props.websiteLink 
+        ? <span><a href="#">{props.websiteLink}</a></span> 
+        : <span className="not-available">"Not Available"</span>}
       </li>
-      <li className="company-link">
+      <li className={props.companyLink ? "company-link" : "company-link not-available"}>
         <CompanyIcon />
-        <a href="#">{props.companyLink}</a>
+        {props.companyLink 
+        ? <span><a href="#">{props.companyLink}</a></span> 
+        : <span className="not-available">"Not Available"</span>}
       </li>
     </ul>
   );

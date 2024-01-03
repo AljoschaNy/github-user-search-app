@@ -12,6 +12,10 @@
     align-items: center;
 }
 
-.further-user-infos a {
+.further-user-infos span {
     margin-left: 19px;
+}
+
+.not-available {
+    opacity: var(--not-available-opacity);
 }
