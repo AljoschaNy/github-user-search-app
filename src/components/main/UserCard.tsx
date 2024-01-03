@@ -3,7 +3,8 @@ import "./UserCard.css";
 import UserStats from "./UserStats";
 
 function UserCard() {
-  const userBio = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.";
+  const userBio = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.';
+  const joinedDate = 'Joined 25 Jan 2011'
 
   return (
     <div className="user-card">
@@ -14,9 +15,8 @@ function UserCard() {
       />
 
       <section className="user-card-info">
-        <div className="user-card-header">
+        <header className="user-card-header">
           <img className="mobile-view-element" src="" alt="profile picture" />
-
           <div className="user-card-name">
             <div>
               <h1>{"The Octocat"}</h1>
@@ -24,14 +24,14 @@ function UserCard() {
                 {"@octocat"}
               </a>
               <p className="joined-date mobile-view-element">
-                {"Joined 25 Jan 2011"}
+                {joinedDate}
               </p>
             </div>
             <p className="joined-date desktop-view-element">
-              Joined 25 Jan 2011
+              {joinedDate}
             </p>
           </div>
-        </div>
+        </header>
         {userBio 
           ? <p className="user-bio">{userBio}</p>
           : <p className="user-bio not-available">This profile has no bio</p>
@@ -40,8 +40,6 @@ function UserCard() {
         <MoreInfos
           location={"San Francisco"}
           companyLink={"@github"}
-          // twitterLink={"twitter-link"}
-          // websiteLink={"website-link"}
         />
       </section>
     </div>
