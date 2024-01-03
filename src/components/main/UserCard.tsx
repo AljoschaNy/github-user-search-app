@@ -4,6 +4,13 @@ import "./UserCard.css";
 import UserStats from "./UserStats";
 
 function UserCard({ userData }:Readonly<UserCardProps>) {
+  const date = new Date(userData.created_at);
+  const formattedDate = date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  })
+
   return (
     <div className="user-card">
       <img
@@ -22,11 +29,11 @@ function UserCard({ userData }:Readonly<UserCardProps>) {
                 {'@' + userData.login}
               </a>
               <p className="joined-date mobile-view-element">
-                {userData.created_at}
+                {'Joined ' + formattedDate}
               </p>
             </div>
             <p className="joined-date desktop-view-element">
-              {userData.created_at}
+              {'Joined ' + formattedDate}
             </p>
           </div>
         </header>
