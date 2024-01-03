@@ -1,0 +1,39 @@
+.user-card {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 48px;
+    margin-top: 24px;
+    display: flex;
+}
+
+.user-card h1 {
+    color: var(--text-color-full);
+    margin-top: -10px;
+}
+
+.user-card img {
+    width: 117px;
+    height: 117px;
+    border-radius: 50%;
+    margin-right: 27px;
+    background: white;
+    flex: none;
+}
+
+.mobile-view-element {
+    display: none;
+}
+
+.user-card-name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user-card-name a {
+    color: var(--accent-color);
+}
+
+.user-bio {
+    margin: 20px 0 32px;
+}
