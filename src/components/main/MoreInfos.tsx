@@ -12,25 +12,25 @@ function MoreInfos(props:Readonly<MoreInfosProps>) {
         <LocationIcon />
         {props.location 
         ? <span><a href="#">{props.location}</a></span> 
-        : <span className="not-available">"Not Available"</span>}
+        : <span className="not-available">Not Available</span>}
       </li>
       <li className={`twitter-link ${!props.twitterLink && 'not-available'}`}>
         <TwitterIcon />
         {props.twitterLink 
         ? <span><a href="#">{props.twitterLink}</a></span> 
-        : <span>Not Available</span>}
+        : <span className="not-available">Not Available</span>}
       </li>
       <li className={`website-link ${!props.websiteLink && 'not-available'}`}>
         <WebsiteIcon />
         {props.websiteLink 
         ? <span><a href="#">{props.websiteLink}</a></span> 
-        : <span className="not-available">"Not Available"</span>}
+        : <span className="not-available">Not Available</span>}
       </li>
       <li className={`company-link ${!props.companyLink && 'not-available'}`}>
         <CompanyIcon />
         {props.companyLink 
         ? <span><a href="#">{props.companyLink}</a></span> 
-        : <span className="not-available">"Not Available"</span>}
+        : <span className="not-available">Not Available</span>}
       </li>
     </ul>
   );

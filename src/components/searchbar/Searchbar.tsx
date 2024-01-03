@@ -26,6 +26,13 @@ function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
 
   const handleSearch = () => {
     setUser(searchInput);
+    setSearchInput("");
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === 'Enter') {
+      handleSearch();
+  }
   }
 
   useEffect(() => {
@@ -41,7 +48,9 @@ function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
         type="text"
         className="searchbar-input"
         name="user-search"
+        value={searchInput}
         onChange={(event) => setSearchInput(event.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Search GitHub username..."
       />
       <div className="searchbar-button">
