@@ -16,9 +16,9 @@ export type UserStatsProps = {
 
 export type MoreInfosProps = {
   location?: string,
-  twitterLink?: string,
+  twitterName?: string,
   websiteLink?: string,
-  companyLink?: string
+  company?: string
 }
 
 export type SearchbarProps = {
