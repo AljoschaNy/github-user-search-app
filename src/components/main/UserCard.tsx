@@ -1,16 +1,14 @@
+import { UserCardProps } from "../../type/types";
 import MoreInfos from "./MoreInfos";
 import "./UserCard.css";
 import UserStats from "./UserStats";
 
-function UserCard() {
-  const userBio = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.';
-  const joinedDate = 'Joined 25 Jan 2011'
-
+function UserCard({ userData }:Readonly<UserCardProps>) {
   return (
     <div className="user-card">
       <img
         className="desktop-view-element"
-        src={"image-src"}
+        src={userData.avatar_url}
         alt="profile picture"
       />
 
@@ -19,27 +17,29 @@ function UserCard() {
           <img className="mobile-view-element" src="" alt="profile picture" />
           <div className="user-card-name">
             <div>
-              <h1>{"The Octocat"}</h1>
+              <h1>{userData.name}</h1>
               <a className="github-link" href="#">
-                {"@octocat"}
+                {'@' + userData.login}
               </a>
               <p className="joined-date mobile-view-element">
-                {joinedDate}
+                {userData.created_at}
               </p>
             </div>
             <p className="joined-date desktop-view-element">
-              {joinedDate}
+              {userData.created_at}
             </p>
           </div>
         </header>
-        {userBio 
-          ? <p className="user-bio">{userBio}</p>
+        {userData.bio 
+          ? <p className="user-bio">{userData.bio}</p>
           : <p className="user-bio not-available">This profile has no bio</p>
         }
-        <UserStats repoCount={8} totalFollowers={25} totalFollowing={20} />
+        <UserStats repoCount={userData.public_repos} totalFollowers={userData.followers} totalFollowing={userData.following} />
         <MoreInfos
-          location={"San Francisco"}
-          companyLink={"@github"}
+          location={userData.location}
+          companyLink={userData.company}
+          twitterLink={userData.twitter_username}
+          websiteLink={userData.blog}
         />
       </section>
     </div>

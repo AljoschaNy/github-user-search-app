@@ -19,7 +19,7 @@ function App() {
     <div className="container">
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <Searchbar setUserData={setUserData} />
-      {userData && <UserCard />}
+      {userData && <UserCard userData={userData} />}
     </div>
   );
 }

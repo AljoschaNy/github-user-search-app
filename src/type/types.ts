@@ -25,17 +25,21 @@ export type SearchbarProps = {
   setUserData: ({}:UserData) => void
 }
 
+export type UserCardProps = {
+  userData: UserData
+}
+
 export type UserData = {
-  avatarUrl: string,
+  avatar_url: string,
   name: string,
   login: string,
-  createdAt: string,
+  created_at: string,
   bio: string | null,
-  publicRepos: number,
+  public_repos: number,
   followers: number,
   following: number,
-  location: string | null,
-  twitter_username: string | null,
-  blog: string | null,
-  company: string | null
+  location: string | undefined,
+  twitter_username: string | undefined,
+  blog: string | undefined,
+  company: string | undefined
 }
