@@ -5,56 +5,71 @@ import "./Searchbar.css";
 import { SearchbarProps } from "../../type/types";
 import SearchSvgSmall from "../icons/SearchSvgSmall";
 
-function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
-  const[searchInput, setSearchInput] = useState("");
-  const[user, setUser] = useState("octocat");
-  
-  const fetchUserData = async ():Promise<void> => {
+function Searchbar({ setUserData }: Readonly<SearchbarProps>) {
+  const [searchInput, setSearchInput] = useState("");
+  const [user, setUser] = useState("octocat");
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const fetchUserData = async (): Promise<void> => {
     const endpoint = "https://api.github.com/users/" + user.toLowerCase();
 
     try {
       const response = await fetch(endpoint);
 
-      if(response.ok) {
+      if (response.ok) {
         const userData = await response.json();
         setUserData(userData);
-        console.log(userData);
+        setSearchInput("");
+        setError(false);
+        setErrorMessage("");
+      } else {
+        throw new Error("No results");
       }
-    } catch(error) {
-      console.log(error);
+    } catch (error: unknown) {
+      setError(true);
+      setErrorMessage((error as Error).message);
     }
-  }
+  };
 
   const handleSearch = () => {
     setUser(searchInput);
-    setSearchInput("");
-  }
+  };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if(event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
-  }
-  }
+    }
+  };
 
   useEffect(() => {
     fetchUserData();
-  }, [user])
+  }, [user]);
 
   return (
     <section className="searchbar">
-      <div className="desktop-search-icon"><SearchSvg /></div>
-      <div className="mobile-search-icon"><SearchSvgSmall /></div>
-      <input
-        type="text"
-        className="searchbar-input"
-        name="user-search"
-        value={searchInput}
-        onChange={(event) => setSearchInput(event.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="Search GitHub username..."
-      />
+      <div className="desktop-search-icon">
+        <SearchSvg />
+      </div>
+      <div className="mobile-search-icon">
+        <SearchSvgSmall />
+      </div>
+
+      <div className="input-container">
+        <input
+          type="text"
+          className="searchbar-input"
+          name="user-search"
+          value={searchInput}
+          onChange={(event) => setSearchInput(event.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search GitHub username..."
+        />
+        {error && <div className="error-message">{errorMessage}</div>}
+      </div>
+
       <div className="searchbar-button">
-        <RegularButton  buttonText={"Search"} onClick={handleSearch} />
+        <RegularButton buttonText={"Search"} onClick={handleSearch} />
       </div>
     </section>
   );

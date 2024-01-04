@@ -61,7 +61,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   .user-card {
     padding: 32px 24px 48px;
     margin-top: 16px;
