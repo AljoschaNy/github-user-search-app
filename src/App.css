@@ -12,3 +12,17 @@
   max-width: 730px;
   margin-top: 144px;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 573px;
+    margin-top: 140px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: 327px;
+    margin-top: 31px;
+  }
+}

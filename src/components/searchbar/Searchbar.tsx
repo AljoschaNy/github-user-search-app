@@ -3,6 +3,7 @@ import RegularButton from "../buttons/RegularButton";
 import SearchSvg from "../icons/SearchSvg";
 import "./Searchbar.css";
 import { SearchbarProps } from "../../type/types";
+import SearchSvgSmall from "../icons/SearchSvgSmall";
 
 function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
   const[searchInput, setSearchInput] = useState("");
@@ -41,9 +42,8 @@ function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
 
   return (
     <section className="searchbar">
-      <div className="search-icon">
-        <SearchSvg />
-      </div>
+      <div className="desktop-search-icon"><SearchSvg /></div>
+      <div className="mobile-search-icon"><SearchSvgSmall /></div>
       <input
         type="text"
         className="searchbar-input"

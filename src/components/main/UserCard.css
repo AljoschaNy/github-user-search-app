@@ -1,39 +1,87 @@
 .user-card {
-    background: var(--bg-secondary);
-    border-radius: 15px;
-    padding: 48px;
-    margin-top: 24px;
-    display: flex;
+  background: var(--bg-secondary);
+  border-radius: 15px;
+  padding: 48px;
+  margin-top: 24px;
+  display: flex;
 }
 
 .user-card h1 {
-    color: var(--text-color-full);
-    margin-top: -10px;
+  color: var(--text-color-full);
+  margin-top: -10px;
+  margin-bottom: 2px;
 }
 
 .user-card img {
-    width: 117px;
-    height: 117px;
-    border-radius: 50%;
-    margin-right: 27px;
-    background: white;
-    flex: none;
+  width: 117px;
+  height: 117px;
+  border-radius: 50%;
+  margin-right: 37px;
+  background: white;
+  flex: none;
 }
 
 .mobile-view-element {
-    display: none;
+  display: none;
 }
 
 .user-card-name {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .user-card-name a {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .user-bio {
-    margin: 20px 0 32px;
+  margin: 20px 0 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-view-element {
+    display: block;
+  }
+
+  .desktop-view-element {
+    display: none;
+  }
+
+  .user-card {
+    padding: 40px;
+  }
+
+  .user-card img {
+    margin-right: 41px;
+  }
+
+  .user-bio {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .user-card {
+    padding: 32px 24px 48px;
+    margin-top: 16px;
+  }
+
+  .user-card h1 {
+    margin-bottom: 0;
+  }
+
+  .user-card img {
+    width: 70px;
+    height: 70px;
+    margin-right: 19px;
+  }
+
+  .joined-date {
+    margin-top: 6px;
+  }
+
+  .user-bio {
+    margin: 33px 0 23px;
+  }
 }
