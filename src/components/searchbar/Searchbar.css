@@ -8,6 +8,10 @@
   margin-top: 36px;
 }
 
+.input-container {
+  width: 100%;
+}
+
 .searchbar-input {
   width: 100%;
   height: 48px;
@@ -31,7 +35,7 @@
   display: none;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   .searchbar {
     padding: 7px 7px 7px 16px;
   }
