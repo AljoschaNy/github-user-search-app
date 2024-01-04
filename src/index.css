@@ -111,6 +111,13 @@ a:hover {
   opacity: 0.7;
 }
 
+@media screen and (max-width: 375px) {
+  .regular-button {
+    font-size: 0.875rem;
+    padding: 12px 16px;
+  }
+}
+
 /* Drop Shadow Styles */
 html.light .searchbar,
 html.light .user-card {
