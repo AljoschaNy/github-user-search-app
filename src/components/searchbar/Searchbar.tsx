@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import RegularButton from "../buttons/RegularButton";
 import SearchSvg from "../icons/SearchSvg";
 import "./Searchbar.css";
+import { SearchbarProps } from "../../type/types";
 
-function Searchbar() {
+function Searchbar({ setUserData }:Readonly<SearchbarProps>) {
   const[searchInput, setSearchInput] = useState("");
   const[user, setUser] = useState("octocat");
-  const[userData, setUserData] = useState();
   
   const fetchUserData = async ():Promise<void> => {
     const endpoint = "https://api.github.com/users/" + user.toLowerCase();
@@ -15,9 +15,9 @@ function Searchbar() {
       const response = await fetch(endpoint);
 
       if(response.ok) {
-        const userInfo = await response.json();
-        setUserData(userInfo);
-        console.log(userInfo);
+        const userData = await response.json();
+        setUserData(userData);
+        console.log(userData);
       }
     } catch(error) {
       console.log(error);
@@ -26,6 +26,13 @@ function Searchbar() {
 
   const handleSearch = () => {
     setUser(searchInput);
+    setSearchInput("");
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === 'Enter') {
+      handleSearch();
+  }
   }
 
   useEffect(() => {
@@ -41,7 +48,9 @@ function Searchbar() {
         type="text"
         className="searchbar-input"
         name="user-search"
+        value={searchInput}
         onChange={(event) => setSearchInput(event.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Search GitHub username..."
       />
       <div className="searchbar-button">

@@ -1,45 +1,52 @@
+import { UserCardProps } from "../../type/types";
 import MoreInfos from "./MoreInfos";
 import "./UserCard.css";
 import UserStats from "./UserStats";
 
-function UserCard() {
-  const userBio = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.';
-  const joinedDate = 'Joined 25 Jan 2011'
+function UserCard({ userData }:Readonly<UserCardProps>) {
+  const date = new Date(userData.created_at);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  })
 
   return (
     <div className="user-card">
-      <img
-        className="desktop-view-element"
-        src={"image-src"}
-        alt="profile picture"
-      />
+      <img className="desktop-view-element" src={userData.avatar_url} alt="profile picture"/>
 
       <section className="user-card-info">
         <header className="user-card-header">
-          <img className="mobile-view-element" src="" alt="profile picture" />
+          <img className="mobile-view-element" src={userData.avatar_url} alt="profile picture" />
           <div className="user-card-name">
             <div>
-              <h1>{"The Octocat"}</h1>
-              <a className="github-link" href="#">
-                {"@octocat"}
+              <h1>{userData.name || userData.login}</h1>
+              <a 
+                className="github-link'"
+                href= {`https://github.com/${userData.login}`}
+                target="_blank"
+              >
+                {"@" + userData.login}
               </a>
               <p className="joined-date mobile-view-element">
-                {joinedDate}
+                {"Joined " + formattedDate}
               </p>
             </div>
             <p className="joined-date desktop-view-element">
-              {joinedDate}
+              {"Joined " + formattedDate}
             </p>
           </div>
         </header>
-        {userBio 
-          ? <p className="user-bio">{userBio}</p>
+        {userData.bio 
+          ? <p className="user-bio">{userData.bio}</p>
           : <p className="user-bio not-available">This profile has no bio</p>
         }
-        <UserStats repoCount={8} totalFollowers={25} totalFollowing={20} />
+        <UserStats repoCount={userData.public_repos} totalFollowers={userData.followers} totalFollowing={userData.following} />
         <MoreInfos
-          location={"San Francisco"}
-          companyLink={"@github"}
+          location={userData.location}
+          company={userData.company}
+          twitterName={userData.twitter_username}
+          websiteLink={userData.blog}
         />
       </section>
     </div>
