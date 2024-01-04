@@ -1,5 +1,5 @@
 export type ThemeToggleProps = {
-  theme: "dark" | "light";
+  theme: string;
   onToggleTheme: () => void;
 };
 

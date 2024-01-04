@@ -6,7 +6,7 @@ import UserCard from "./components/main/UserCard";
 import { UserData } from "./type/types";
 
 function App() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<string>(document.documentElement.className);
   const [userData, setUserData] = useState<UserData>();
 
   const toggleTheme = () => {
