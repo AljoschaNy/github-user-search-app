@@ -21,14 +21,12 @@ function Searchbar({ setUserData }: Readonly<SearchbarProps>) {
         const userData = await response.json();
         setUserData(userData);
         setSearchInput("");
-        console.log(userData);
         setError(false);
         setErrorMessage("");
       } else {
         throw new Error("No results");
       }
     } catch (error: unknown) {
-      console.log((error as Error).message);
       setError(true);
       setErrorMessage((error as Error).message);
     }
