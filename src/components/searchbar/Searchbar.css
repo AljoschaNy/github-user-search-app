@@ -10,6 +10,8 @@
 
 .input-container {
   width: 100%;
+  position: relative;
+  margin-left: 24px;
 }
 
 .searchbar-input {
@@ -18,7 +20,6 @@
   font-size: 1.125rem;
   color: var(--text-color);
   background: none;
-  margin-left: 24px;
   border: none;
   outline: none;
 }
@@ -35,14 +36,26 @@
   display: none;
 }
 
+.error-message {
+  color: var(--error-color);
+  background: var(--bg-secondary);
+  padding-left: 10px;
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+
 @media screen and (max-width: 480px) {
   .searchbar {
     padding: 7px 7px 7px 16px;
   }
 
+  .input-container {
+    margin-left: 9px;
+  }
+
   .searchbar-input {
     font-size: 0.8125rem;
-    margin-left: 9px;
   }
 
   .searchbar-button {

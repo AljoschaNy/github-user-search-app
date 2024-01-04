@@ -9,6 +9,7 @@ function Searchbar({ setUserData }: Readonly<SearchbarProps>) {
   const [searchInput, setSearchInput] = useState("");
   const [user, setUser] = useState("octocat");
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const fetchUserData = async (): Promise<void> => {
     const endpoint = "https://api.github.com/users/" + user.toLowerCase();
@@ -19,19 +20,22 @@ function Searchbar({ setUserData }: Readonly<SearchbarProps>) {
       if (response.ok) {
         const userData = await response.json();
         setUserData(userData);
+        setSearchInput("");
         console.log(userData);
+        setError(false);
+        setErrorMessage("");
       } else {
-        throw new Error("User was not found");
+        throw new Error("No results");
       }
     } catch (error: unknown) {
       console.log((error as Error).message);
       setError(true);
+      setErrorMessage((error as Error).message);
     }
   };
 
   const handleSearch = () => {
     setUser(searchInput);
-    setSearchInput("");
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -63,7 +67,7 @@ function Searchbar({ setUserData }: Readonly<SearchbarProps>) {
           onKeyDown={handleKeyDown}
           placeholder="Search GitHub username..."
         />
-        {error && <div className="error-message">{error}</div>}
+        {error && <div className="error-message">{errorMessage}</div>}
       </div>
 
       <div className="searchbar-button">

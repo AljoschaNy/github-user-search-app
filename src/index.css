@@ -6,6 +6,7 @@
   --font-weight-bold: 700;
   --accent-color: hsl(212, 100%, 50%);
   --button-text-color: hsl(0, 0%, 100%);
+  --error-color: hsl(0, 91%, 62%);
   --not-available-opacity: 0.5;
 
   font-synthesis: none;
